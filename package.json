@@ -1,0 +1,50 @@
+{
+  "name": "dsh-proxy-switch",
+  "version": "0.1.0",
+  "description": "只让 DSH 走代理：复用 DSH 自己的代理安装路径，把当前进程接到本机 HTTP 代理，其它程序照旧直连。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "proxy"
+  ],
+  "license": "MIT",
+  "author": "gaoran12138",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaoran12138/dsh-proxy-switch.git"
+  },
+  "homepage": "https://github.com/gaoran12138/dsh-proxy-switch#readme",
+  "bugs": {
+    "url": "https://github.com/gaoran12138/dsh-proxy-switch/issues"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.1-rc.3"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "icon": "./icon.svg"
+}

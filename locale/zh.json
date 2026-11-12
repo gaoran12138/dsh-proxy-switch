@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DSH 专用代理",
+    "description": "只让 DSH 这个进程走本机 http 代理，其它程序照旧直连。复用 DSH 自己的代理安装路径，可用 /proxy on|off|status|test 随时切换。"
+  }
+}

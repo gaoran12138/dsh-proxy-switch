@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DSH-only Proxy",
+    "description": "Route only this DSH process through a local http proxy; everything else on the machine keeps connecting directly. Reuses DSH's own proxy install path, toggled with /proxy on|off|status|test."
+  }
+}

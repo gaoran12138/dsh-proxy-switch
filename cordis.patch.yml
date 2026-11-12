@@ -1,0 +1,24 @@
+# dsh-proxy-switch 组合包补丁：把「DSH 专用代理」这一行插入 profile。
+#
+# 本补丁按 id 覆盖；用户应在自己 profile 的 cordis.patch.yml 里覆盖本行的整个 config。
+#
+# 默认 enabled: false —— 装好之后不会改变任何网络行为。确认本机代理（例如 FlClash 的
+# mixed-port）已经在监听之后，用 /proxy on 打开，或用 /proxy on http://127.0.0.1:7890
+# 指定端口。
+#
+# 示例（用户 profile 的 cordis.patch.yml）：
+#   - id: proxy-switch
+#     config:
+#       enabled: true
+#       url: http://127.0.0.1:7890
+#       noProxy: 127.0.0.1,localhost,*.local
+#       probeUrl: https://www.gstatic.com/generate_204
+#
+- insert:
+    - id: proxy-switch
+      name: 'dsh-proxy-switch'
+      config:
+        enabled: false
+        url: 'http://127.0.0.1:7890'
+        noProxy: ''
+        probeUrl: 'https://www.gstatic.com/generate_204'
